@@ -14,24 +14,10 @@ export const cryptoApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
         getCryptos: builder.query({
-            query: () => createRequest('/coins')
+            query: (count) => createRequest(`/coins?limit=${count}`)
         })
     })
 })
-// var options = {
-//   method: 'GET',
-//   url: 'https://coinranking1.p.rapidapi.com/stats',
-//   headers: {
-//     'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-//     'x-rapidapi-key': '378d2b7f38msh558fe05876b0130p1f136fjsndc23ec79d10c'
-//   }
-// };
-
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
 
 export const {
     useGetCryptosQuery, // üstte getCryptos var adını ordan alıyor
