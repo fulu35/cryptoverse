@@ -17,7 +17,7 @@ export const cryptoApi = createApi({
             query: (count) => createRequest(`/coins?limit=${count}`)
         })
     })
-})
+});
 
 export const {
     useGetCryptosQuery, // üstte getCryptos var adını ordan alıyor
